@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset="UTF-8">
+    <title> Stopwatch in javascript </title>
+    <style type="text/css">
+
+        body{
+            background: whitesmoke;
+            color: black;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .stopwatch{
+            font-size: 15em;
+            font-family: monospace;
+        }
+
+        ol{
+            margin: 0;
+            padding: 0;
+        }
+
+        ol li{
+            padding: 10px 0;
+        }
+
+    </style>
+        
+    
+</head>
+<body>
+
+    <div class="stopwatch">00:00:00</div>
+    <div class="controls">
+
+        <button onclick="restart()">Start</button>
+        <button onclick="pause()">Pause</button>
+        <button onclick="stop()">Stop</button>
+        <button onclick="lap()">Lap</button>
+        <button onclick="resetLaps()">Reset</button>
+        <button onclick="history()">History</button>
+    </div>
+    
+    <ol class="laps"></ol>
+
+    <script>
+    
+    var ms = 0, s = 0, m = 0;
+    var timer;
+
+    var stopwatch1 = document.querySelector('.stopwatch');
+    var lapsContainer = document.querySelector('.laps');
+
+    function start() {
+        if(!timer){
+        timer = setInterval(run, 10);
+        }
+    
+    }
+    function run() {
+        stopwatch1.textContent = (m < 10 ? "0" + m : m) + ":" + (s < 10 ? "0" + s :s) + ":" + (ms < 10 ? "0" + ms :ms);
+        ms++;
+        if(ms == 100) {
+            ms = 0;
+            s++;
+         }
+        if(s == 60){
+            s = 0;
+            m++;
+        }
+    }
+
+    function pause() {
+        stopTimer();
+    }
+
+    function stop() {
+        stopTimer();
+        m = 0;
+        ms = 0;
+        s = 0;
+    }
+
+    function stopTimer(){
+        clearInterval(timer);
+        timer = false;
+    }
+
+    function getTimer(){
+        return (m < 10 ? "0" + m : m) + ":" + (s < 10 ? "0" + s :s) + ":" + (ms < 10 ? "0" + ms :ms);
+    }
+
+    function restart() {
+        pause();
+        start();
+    }
+
+    function lap(){
+        if(timer) {
+            var li = document.createElement('li');
+            li.innerText = getTimer();
+            lapsContainer.appendChild(li);
+        }
+    }
+
+    function resetlaps(){
+        lapsContainer().innerHTML = "";
+    }
+    </script>
+
+</body>
+</html>
