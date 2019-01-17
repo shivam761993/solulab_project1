@@ -17,7 +17,17 @@
 
         .stopwatch{
             font-size: 15em;
-            font-family: monospace;
+            font-family:monospace;
+        }
+
+        .but1, .but2, .but3, .but4, .but5, .but6{
+            font-size: 1.5em;
+            background-color: whitesmoke;
+            border: 2px solid black;
+            display:inline-block;
+            padding: 0.5em 1em;
+
+            
         }
 
         ol{
@@ -38,12 +48,12 @@
     <div class="stopwatch">00:00:00</div>
     <div class="controls">
 
-        <button onclick="restart()">Start</button>
-        <button onclick="pause()">Pause</button>
-        <button onclick="stop()">Stop</button>
-        <button onclick="lap()">Lap</button>
-        <button onclick="resetLaps()">Reset</button>
-        <button onclick="history()">History</button>
+        <button onclick="restart()" class="but1">Start</button>
+        <button onclick="pause()" class="but2">Pause</button>
+        <button onclick="stop()" class="but3">Stop</button>
+        <button onclick="lap()" class="but4">Lap</button>
+        <button onclick="resetLaps()" class="but5">Reset</button>
+        <button onclick="history()" class="but6">History</button>
     </div>
     
     <ol class="laps"></ol>
