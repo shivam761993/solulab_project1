@@ -1,0 +1,34 @@
+    /* Adding some style to the stopwatch */
+
+        body{
+            background: whitesmoke;
+            color: black;
+            display: flex; /* Using flexbox styling here */
+            flex-direction: column; /* Easier to design flexible responsive layout structure */
+            align-items: center; 
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .stopwatch{
+            font-size: 15em;
+            font-family:monospace; 
+        }
+
+        .but1, .but2, .but3, .but4, .but5, .but6{
+            font-size: 1.5em;
+            background-color: whitesmoke; /* Alternate colors used here for better visibility */
+            border: 2px solid black;
+            display:inline-block;
+            padding: 0.5em 1em;
+         }
+        
+        ol{
+            margin: 0;
+            padding: 0;
+        }
+
+        ol li{
+            padding: 15px 0;
+            font-size: 1.5em; /* em font size used for comparative display.
+        }

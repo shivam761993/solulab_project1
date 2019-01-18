@@ -1,0 +1,33 @@
+<!-- Hello, I am making a stopwatch let's see how it works out-->
+<!DOCTYPE html>
+<html lang = "en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <title> Stopwatch in javascript </title>
+<!--Linking my css style sheets with the main html file-->
+    <link rel="stylesheet" type="text/css" href="final.css">
+
+</head>
+
+<body>
+
+    <div class="stopwatch">00:00:00</div>
+    <div class="controls">
+<!--Adding all the required buttons for the stopwatch-->
+        <button onclick="restart()" class="but1">Start</button>
+        <button onclick="pause()" class="but2">Pause</button>
+        <button onclick="stop()" class="but3">Stop</button>
+        <button onclick="lap()" class="but4">Lap</button>
+        <button onclick="resetLaps()" class="but5">Reset</button>
+        <button onclick="history()" class="but6">History</button>
+    </div>
+<!--Making ordered list for displaying the laps-->
+    <ol class="laps"></ol>
+<!--Linking the javascript file with the main html file-->
+    <script type="text/javascript" src="final.js"></script>
+    
+    </body>
+
+    </html
